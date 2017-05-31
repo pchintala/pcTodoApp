@@ -1,0 +1,62 @@
+<div class="container">
+	<div class="row">
+		<div class="col s5">
+		 	<h4>Sub header </h4>
+			{{title}}
+				<form ng-submit="todoCtrl.submit()">
+					<button>Submit</button>
+				</form>
+
+				{{names}}
+				
+				<ol>
+					<li ng-repeat="name in names">{{name}}</li>
+				</ol>
+				<input type="" ng-model="entryName"/>
+				<button ng-click="onClick()">Add Name</button>
+		 </div>
+
+		<div class="col s5"> 
+			<h4>Sub header2 </h4>
+			<div class="row">
+				<form class="col s12" ng-submit="todoCtrl.submit()">
+					<div class="row">
+						<div class="input-field col s6">
+
+		                    <input id="icon_prefix" type="text" class="validate" placeholder="Add a todo" ng-model="todoCtrl.newTodo">
+		                </div>
+					</div>
+				</form>
+			</div> 
+			<p>{{todoCtrl.todos}}</p>
+			<div class="row">
+				<div class="col s12">
+					<div class="card">
+						
+						<div class="card" ng-repeat="todo in todoCtrl.todos track by $index">
+							<div class="card-content">
+								<p ng-show="!todo.edit">{{todo.text}}</p>
+								<input ng-show="todo.edit" ng-model="todo.text">
+							</div>
+							<div class="card-action">
+								<a href="#">Delete</a>
+								<a href="#" ng-show="!todo.edit" ng-click="todoCtrl.edit($index)">Edit</a>
+								<a href="#" ng-show="todo.edit" ng-click="todoCtrl.edit($index)">Done</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+	
+	<!-- New row -->
+	<div class="row">
+
+	</div>
+	
+</div>
