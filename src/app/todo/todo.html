@@ -39,7 +39,7 @@
 								<input ng-show="todo.edit" ng-model="todo.text">
 							</div>
 							<div class="card-action">
-								<a href="#">Delete</a>
+								<a href="#" ng-click="todoCtrl.delete($index)">Delete</a>
 								<a href="#" ng-show="!todo.edit" ng-click="todoCtrl.edit($index)">Edit</a>
 								<a href="#" ng-show="todo.edit" ng-click="todoCtrl.edit($index)">Done</a>
 							</div>
