@@ -11,7 +11,7 @@ angular.module('todo', [])
 		this.todos = model.todos;
 
 		this.submit = function onSubmit(){
-			//alert("Submitted!");
+			alert("Submitted!"+ this.newTodo);
 			this.todos.push({
 				text: this.newTodo,
 				edit: false
