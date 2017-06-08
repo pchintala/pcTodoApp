@@ -6,7 +6,8 @@
 angular.module('todoApp', [
 	'ui.router', 
 	'todo',
-	'states'
+	'states',
+	'reports'
 ])
 .config(function($stateProvider, $urlRouterProvider){
 	var basePath = 'src/app/';
@@ -22,6 +23,11 @@ angular.module('todoApp', [
 			url: '/states',
 			templateUrl: basePath + '/states/states.html',
 			controller: 'statesController as statesCtrl'
+		})
+		.state('reports',{
+			url: '/reports',
+			templateUrl: basePath + '/bo/reports.html',
+			controller: 'reportsController as reportsCtrl'
 		})
 		;
 });
